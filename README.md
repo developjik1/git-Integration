@@ -1,4 +1,4 @@
-## React Query With Next.js
+# react-query
 
 ## 기본 Next.js 프로젝트에 추가된 것 
 
