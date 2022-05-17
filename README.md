@@ -335,7 +335,7 @@ export default PostPage;
 
 ### Caching & Background Refetch
 1. ``useQuery`` 세 번째 인수로 제공된 옵션을 주석처리하고, 실행시켜주세요.
-2. 개발자 도구를 열어서, 네트워크 속도를 Slow 3G로 변경해주세요.
+2. 개발자 도구를 열어서, 네트워크 속도를 Slow 3G로 변경해주세요.<br/>
    <img width="503" alt="network1" src="https://user-images.githubusercontent.com/104342916/168740730-41bb080d-55eb-4ea0-8b7c-ea66b995b549.png">
    <img width="502" alt="network2" src="https://user-images.githubusercontent.com/104342916/168740731-0ad3fe5f-7009-4e4c-954a-484428d121b6.png">
 3. /에서 각 게시물을 클릭하면 다음과 같이 Loading...이 보인 후에 내용이 모두 나타나는 것을 확인할 수 있습니다.
