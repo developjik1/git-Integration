@@ -1,6 +1,8 @@
 # react-query
 
-## 기본 Next.js 프로젝트에 추가된 것 
+<br/>
+
+## 기본 Next.js 프로젝트에 추가된 것
 
 ### 1) 설치 된 라이브러리 및 패키지
 - `axios`
@@ -126,6 +128,8 @@
     npm run dev
     ```
 
+<br/>
+
 ## react-query 적용
 ```javascript
 // _app.js
@@ -155,6 +159,8 @@ export default MyApp
 3) `ReactQueryDevtools`를 개발도구를 설정을 위해 추가합니다. 
 
 `ReactQueryDevtools`는 개발도구로 개발환경이 development(NODE_ENV=development)일 때만 나타납니다.
+
+<br/>
 
 ## `useQuery`
 ```javascript
@@ -246,6 +252,8 @@ export default Home;
   실패했을 경우에는 isError가 true가 되고, error에 에러 내용이 들어가게 됩니다. 
   ``useQuery``의 모든 반환 값을 확인하고 싶으면, [공식 문서](https://react-query.tanstack.com/reference/`useQuery`)를 참고해주세요.
 
+<br/>
+
 ## query State 알아보기
 
 `react-query`의 결과 값 `State`는 총 4가지 상태(`fresh`, `fetching`, `stale`, `inactive`)를 가질 수 있다.
@@ -268,6 +276,7 @@ export default Home;
 
 - inactive: query의 비활성화 상태를 나타낸다. 이 상태에서는 기본적으로 5분동안 캐싱된 상태로 query 값을 저장하고, 그 이후에는 삭제한다.
 
+<br/>
 
 ## Caching & Background Refetch & Initial Data
 
@@ -339,6 +348,7 @@ export default PostPage;
    이때 중요한 것은 무조건 `stale` 상태이어야만 합니다. `fresh`인 상태에서는 `Background Refetch`를 진행하지 않습니다.
 
 ### Initial Data
+
 이번에는 ``useQuery`Client`를 이용해서 `_app.js`에서 생성했던 `queryClient`를 가져와 보겠습니다.
 이 객체로부터 이전에 요청해서 캐싱된 데이터를 가져올 수 있습니다.
 
@@ -370,6 +380,7 @@ initialData를 보시면 `queryClient.getQueryData`의 인수로 "posts"가 들�
 참고로 Loading이 보여지지 않을 뿐이지, background에서는 fetching이 진행되고 있습니다. 
 데이터가 다르다면 fetching 진행된 이후에 바뀐 데이터가 보여지게 됩니다.
 
+<br/>
 
 ## Parallel Query
 여러 개의 Query를 다루는 것을 말한다.
@@ -399,6 +410,7 @@ export default Parallel;
 ```
 `useQuery`의 `queryKey`로 배열을 활용 할 수 있고,`queryFn` 함수의 매개변수로 query를 사용할 수 있다.
 
+<br/>
 
 ## Dynamic Parallel Query
 
@@ -430,6 +442,8 @@ const Parallel = () => {
 export default Parallel;
 
 ```
+
+<br/>
 
 ## Dependent Query
 
@@ -478,6 +492,8 @@ export default Dependent;
 이는 동기적으로 요청을 수행해야 할 때 유용하게 사용될 수 있습니다.
 
 > !! 연산자는 undefined일 경우라도 확실한 true / false  값을 가지게하기위해서 사용합니다.
+
+<br/>
 
 ## Paginated Query
 
@@ -535,6 +551,8 @@ Next Page 누를 경우 Loading이 보여지고 UI가 달라지는 것을 볼 �
 
 이런 상황에서 이전 상태를 유지하여 Loading을 보지않게 하기 위해 `keepPreviousData` 옵션을 제공합니다.
 `keepPreviousData` 주석 처리를 해제하고 다시 실행해보면 Next Page 버튼 Click시 Loading으로 바뀌지 않고 이전의 내용이 유지되며 data가 바뀌게 됩니다.
+
+<br/>
 
 ## Infinite Query(`useInfiniteQuery`)
 
@@ -618,6 +636,8 @@ export default InfiniteQueriesPage;
    그리고 `fetchNextPage`는 `getNextPageParam`에서 반환한 페이지 정보를 바탕으로 `queryFn`을 실행시키는 함수입니다.
 
 우리가 Load More 버튼을 클릭하면 (pages.length + 1)이 getPosts의 `PageParam`으로 전달되어 서버에 데이터를 요청하고 정보를 받아온 후에 브라우저에 그리게 됩니다.
+
+<br/>
 
 ## `useMutation`
 
@@ -843,6 +863,8 @@ const { mutate } = `useMutation`(addTodo, {
 그리고 할 일 목록을 추가해보면, 추가한 데이터가 즉시 보였다가 에러가 발생했기 때문에 이전 데이터(previousData)로 교체합니다.
 항상 `onSettled`에 의해서 서버 데이터와 일치시키는 작업까지 이루어지게 됩니다.
 굳이 `refetch` 과정이 불필요하다면 `onSettled`를 주석처리하면 됩니다.
+
+<br/>
 
 ## react-query로 Next.js SSR하기 
 
