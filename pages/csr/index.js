@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
+import Link from "next/link";
 import axios from "axios";
 import styled from "@emotion/styled";
-import Link from "next/link";
-
 
 function CSR(props) {
+  console.log("render")
   const [uuid, setUuid] = useState('');
 
   const getData = async () => {
@@ -16,12 +16,14 @@ function CSR(props) {
     getData()
   }, [])
 
+  // console.log(props)
+
   return (
     <>
       <Center>
         {/*<h1>{props.label} :   </h1>*/}
         {/*<h1>{props.uuid}</h1>*/}
-        {uuid && <h1>{uuid}</h1>}
+        {uuid && <h1>uuid : {uuid}</h1>}
       </Center>
       <Center>
         <Link href="/">
